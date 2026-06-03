@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
 # This script sorts arguments in numeric order
 
-puts ARGV.sort_by { |x| x.to_i }
+numbers = ARGV.select { |x| x.match?(/^[-+]?\d+$/) }
+
+puts numbers.sort_by(&:to_i)
